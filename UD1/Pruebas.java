@@ -1,26 +1,28 @@
 import java.util.Scanner;
-public class Pruebas   {
+public class Pruebas {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Introduce un numero entero: ");
-        int numero = sc.nextInt();
 
-        int original = numero;
-        int invertido = 0;
+        System.out.print("Primer numero: ");
+        int a = sc.nextInt();
 
-        while (numero != 0) {
-            int cifra = numero % 10;
-            invertido = invertido * 10 + cifra;
-            numero = numero / 10;
-        }
+        System.out.print("Segundo numero: ");
+        int b = sc.nextInt();
 
-        System.out.println("Numero al reves: " + invertido);
+        int resultado = mayor(a, b);
 
-        if (original == invertido) {
-            System.out.println("El numero es capicua");
+        System.out.println("El mayor es: " + resultado);
+
+        sc.close();
+    }
+
+    public static int mayor(int a, int b) {
+        if (a > b) {
+            return a;
+        } else if (b > a) {
+            return b;
         } else {
-            System.out.println("El numero no es capicua");
+            return b; //o a, es indiferente
         }
     }
 }
-

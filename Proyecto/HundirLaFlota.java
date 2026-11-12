@@ -14,13 +14,14 @@ public class HundirLaFlota {
 
         char[][] tableroJugador = new char[10][10];
         char[][] tableroDisparosJugador = new char[10][10];
-        char[][] tableroPC = new char[10][10];
-        char[][] tableroDisparosPC = new char[10][10];
+        char[][] tablero = new char[10][10];
+        char[][] tableroDisparos = new char[10][10];
 
         inicializarTablero(tableroDisparosJugador);
-        inicializarTablero(tableroDisparosPC);
-        inicializarTablero(tableroPC);
+        inicializarTablero(tableroDisparos);
+        inicializarTablero(tablero);
         inicializarTablero(tableroJugador);
+        visualizarTablero(tablero, tableroDisparos);
     }
 
     public static void inicializarTablero(char[][] tablero){
@@ -30,7 +31,7 @@ public class HundirLaFlota {
     }
 
     public static void visualizarTablero(char[][] tablero, char[][] tableroDisparos){
-        System.out.print(" ");
+        System.out.print("  ");
        for (int a = 0; a < tablero[0].length; a++) {
            System.out.print(a + " ");
        }
@@ -42,7 +43,6 @@ public class HundirLaFlota {
 
         for (int j = 0; j < tablero[i].length; j++) {
             System.out.print(tablero[i][j] + " ");
-            System.out.print(tableroDisparos[i][j] + " ");
         }
 
         System.out.println();

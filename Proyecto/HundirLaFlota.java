@@ -33,6 +33,7 @@ public class HundirLaFlota {
 
     public static void visualizarTablero(char[][] tablero, char[][] tableroDisparos) {
         System.out.println("\n   TU FLOTA                TUS DISPAROS");
+
         //letras y agua
         for (int f = 0; f < tablero.length; f++) {
             //letras

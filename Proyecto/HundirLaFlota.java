@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class HundirLaFlota {
     private static Scanner teclado = new Scanner(System.in);
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println("""
                 =========================
                      HUNDIR LA FLOTA
@@ -24,28 +25,41 @@ public class HundirLaFlota {
         visualizarTablero(tablero, tableroDisparos);
     }
 
-    public static void inicializarTablero(char[][] tablero){
+    public static void inicializarTablero(char[][] tablero) {
         for (int f = 0; f < tablero.length; f++)
             for (int c = 0; c < tablero[f].length; c++)
                 tablero[f][c] = '~';
     }
 
-    public static void visualizarTablero(char[][] tablero, char[][] tableroDisparos){
-        System.out.print("  ");
-       for (int a = 0; a < tablero[0].length; a++) {
-           System.out.print(a + " ");
-       }
-        System.out.println();
+    public static void visualizarTablero(char[][] tablero, char[][] tableroDisparos) {
+        System.out.println("\n   TU FLOTA                TUS DISPAROS");
 
-        for (int i = 0; i < tablero.length; i++){
-            char letra = (char) ('A' + i);
-            System.out.print(letra + " ");
+        //letras y agua
+        for (int f = 0; f < tablero.length; f++) {
+            //letras
+            System.out.print((char) ('A' + f) + " ");
+            //agua
+            for (int c = 0; c < tablero[f].length; c++)
+                System.out.print(tablero[f][c] + " ");
 
-        for (int j = 0; j < tablero[i].length; j++) {
-            System.out.print(tablero[i][j] + " ");
+            //letras
+            System.out.print("   " + (char) ('A' + f) + " ");
+            //agua
+            for (int c = 0; c < tableroDisparos[f].length; c++)
+                System.out.print(tableroDisparos[f][c] + " ");
+
+            System.out.println();
         }
+        //numeros primer tablero
+        System.out.print("  ");
+        for (int c = 0; c < tablero[0].length; c++)
+            System.out.print(c + " ");
+
+        //numeros segundo tablero
+        System.out.print("     ");
+        for (int c = 0; c < tableroDisparos[0].length; c++)
+            System.out.print(c + " ");
 
         System.out.println();
+        }
     }
-}
-}
